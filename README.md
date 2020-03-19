@@ -6,8 +6,7 @@ Right now only gets daily data
 ## Goal
 The goal of this API is to provide quick and useful, up to date statistics on Covid-19 deaths, confirmed cases, and recovered cases by location.  
 
-## TODO
-Not sure, potentially add more endpoints, at this time I'm not sure.  
+## TODO  
 1. Properly parse each line, right now does naive parsing using ,. Since it's a csv, this is not gonna work for things like Korea, South  
 2. Add endpoints for different days data  
 3. Add endpoints for the Time Series All data  
