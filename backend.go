@@ -6,8 +6,11 @@ import (
 	"io/ioutil"
 	"strings"
 	"github.com/gocolly/colly"
-	"fmt"
 	
+	"encoding/csv"
+	"io"
+	"log"
+
 )
 
 func getNextPage() string{
@@ -210,7 +213,6 @@ func getAll() string{
 func getPage() string {
 	
 	url := getNextPage()
-	fmt.Println(url)
 	resp, err := http.Get(url)
 	// handle the error if there is one
 	if err != nil {
@@ -226,4 +228,96 @@ func getPage() string {
 	}
 	// show the HTML code as a string %s
 	return string(html)
+}
+
+func getTSConfirmedAll() string{
+	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv")
+	// handle the error if there is one
+	if err != nil {
+		panic(err)
+	}
+	
+	// do this now so it won't be forgotten
+	defer resp.Body.Close()
+	// reads html as a slice of bytes
+	html, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	return getTSData(string(html))
+}
+
+func getTSDDeathsAll() string{
+	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv")
+	// handle the error if there is one
+	if err != nil {
+		panic(err)
+	}
+	
+	// do this now so it won't be forgotten
+	defer resp.Body.Close()
+	// reads html as a slice of bytes
+	html, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	return getTSData(string(html))
+
+}
+
+func getTSDRecoveredAll() string{
+	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv")
+	// handle the error if there is one
+	if err != nil {
+		panic(err)
+	}
+	
+	// do this now so it won't be forgotten
+	defer resp.Body.Close()
+	// reads html as a slice of bytes
+	html, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	return getTSData(string(html))
+
+}
+
+
+func getTSData(in string) string{
+	r := csv.NewReader(strings.NewReader(in))
+	finalFinal := "{\n\"Nodes\":["
+	var found []string
+	var first []string
+	i := 0
+	for {
+		line, err := r.Read()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Fatal(err)
+		}
+		if(i == 0) {
+			first = line
+			first = first[4:]
+		} else {
+			finalReturn := "{" + "\n\"Province/State\":\"" + line[0] + "\",\n\"Country/Region\":\""+line[1]+"\",\n\"Latitude\":"+line[6]+",\n\"Longitude\":"+line[7]+",\n\"Days\":["
+			for ind,ele := range first {
+				finalReturn += "{\"" + ele + "\":" + line[ind+4]+"},\n"
+			}
+			finalReturn = finalReturn[:len(finalReturn)-2]
+			finalReturn += "]\n},"
+			finalFinal += finalReturn
+			found = append(found,finalReturn)
+
+		}
+		i++
+	}
+	if(len(found) > 0) {
+		finalFinal = finalFinal[:len(finalFinal)-1]
+	}
+	finalFinal += "]\n}"
+	return finalFinal
+	
 }

@@ -6,6 +6,7 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	
+	
 )
 
 func notFound(w http.ResponseWriter, r *http.Request) {
@@ -74,11 +75,14 @@ func main() {
 	r := mux.NewRouter()
 	api := r.PathPrefix("/api/").Subrouter()
 
-	api.HandleFunc("/State/{state}",stateGET).Methods(http.MethodGet)
-	api.HandleFunc("/Country/{country}",countryGET).Methods(http.MethodGet)
-	api.HandleFunc("/CountryAndState/{state}/{country}",countrystateGET).Methods(http.MethodGet)
+	api.HandleFunc("/Daily/State/{state}",stateGET).Methods(http.MethodGet)
+	api.HandleFunc("/Daily/Country/{country}",countryGET).Methods(http.MethodGet)
+	api.HandleFunc("/Daily/CountryAndState/{state}/{country}",countrystateGET).Methods(http.MethodGet)
+	// api.HandleFunc("/Timeseries/Confirmed",stateGET).Methods(http.MethodGet)
+	// api.HandleFunc("/Timeseries/Recovered",stateGET).Methods(http.MethodGet)
+	// api.HandleFunc("/Timeseries/Deaths",stateGET).Methods(http.MethodGet)
 	api.HandleFunc("/", notFound)
 	log.Fatal(http.ListenAndServe(":80", r))
-	// getNextPage()
+
 }
 
