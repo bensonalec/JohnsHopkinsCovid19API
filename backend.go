@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"strings"
 	"github.com/gocolly/colly"
+	"fmt"
+	
 )
 
 func getNextPage() string{
@@ -17,7 +19,13 @@ func getNextPage() string{
 	})
 	c.Visit("https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports")
 	//get last, then
-	return links[len(links)-2]
+	g := colly.NewCollector()
+	rawLink := ""
+	g.OnHTML("#raw-url", func(e *colly.HTMLElement) {
+		rawLink = e.Attr("href")
+	})
+	g.Visit("https://github.com" + links[len(links)-2])
+	return "https://github.com" + rawLink
 }
 
 func getCountry(country string) string{
@@ -200,7 +208,9 @@ func getAll() string{
 
 
 func getPage() string {
-	url := "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/03-16-2020.csv"
+	
+	url := getNextPage()
+	fmt.Println(url)
 	resp, err := http.Get(url)
 	// handle the error if there is one
 	if err != nil {
