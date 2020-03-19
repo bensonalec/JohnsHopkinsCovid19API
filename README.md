@@ -11,6 +11,7 @@ The goal of this API is to provide quick and useful, up to date statistics on Co
 3. Write backend for Time Series by State  
 4. Write backend for Time Series by Country  
 5. Add endpoints for Time Series State and Country
+6. Add documentation for Time Series Endpoints
 
 ## Endpoints
 
