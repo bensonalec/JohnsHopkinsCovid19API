@@ -247,6 +247,41 @@ func getTSConfirmedAll() string{
 	return getTSData(string(html))
 }
 
+func getTSConfirmedState(state string) string{
+	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv")
+	// handle the error if there is one
+	if err != nil {
+		panic(err)
+	}
+	
+	// do this now so it won't be forgotten
+	defer resp.Body.Close()
+	// reads html as a slice of bytes
+	html, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	return getTSDataState(string(html),state)
+}
+
+func getTSConfirmedCountry(country string) string{
+	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv")
+	// handle the error if there is one
+	if err != nil {
+		panic(err)
+	}
+	
+	// do this now so it won't be forgotten
+	defer resp.Body.Close()
+	// reads html as a slice of bytes
+	html, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	return getTSDataCountry(string(html),country)
+}
+
+
 func getTSDeathsAll() string{
 	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv")
 	// handle the error if there is one
@@ -265,6 +300,43 @@ func getTSDeathsAll() string{
 
 }
 
+func getTSDeathsState(state string) string{
+	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv")
+	// handle the error if there is one
+	if err != nil {
+		panic(err)
+	}
+	
+	// do this now so it won't be forgotten
+	defer resp.Body.Close()
+	// reads html as a slice of bytes
+	html, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	return getTSDataState(string(html),state)
+
+}
+
+func getTSDeathsCountry(country string) string{
+	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv")
+	// handle the error if there is one
+	if err != nil {
+		panic(err)
+	}
+	
+	// do this now so it won't be forgotten
+	defer resp.Body.Close()
+	// reads html as a slice of bytes
+	html, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	return getTSDataCountry(string(html),country)
+
+}
+
+
 func getTSRecoveredAll() string{
 	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv")
 	// handle the error if there is one
@@ -280,6 +352,42 @@ func getTSRecoveredAll() string{
 		panic(err)
 	}
 	return getTSData(string(html))
+
+}
+
+func getTSRecoveredState(state string) string{
+	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv")
+	// handle the error if there is one
+	if err != nil {
+		panic(err)
+	}
+	
+	// do this now so it won't be forgotten
+	defer resp.Body.Close()
+	// reads html as a slice of bytes
+	html, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	return getTSDataState(string(html),state)
+
+}
+
+func getTSRecoveredCountry(country string) string{
+	resp, err := http.Get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv")
+	// handle the error if there is one
+	if err != nil {
+		panic(err)
+	}
+	
+	// do this now so it won't be forgotten
+	defer resp.Body.Close()
+	// reads html as a slice of bytes
+	html, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	return getTSDataCountry(string(html),country)
 
 }
 
