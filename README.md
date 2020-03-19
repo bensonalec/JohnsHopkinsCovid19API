@@ -1,6 +1,7 @@
 # Johns Hopkins Covid 19 API
 
 Using the data from the Repository located at: https://github.com/CSSEGISandData/COVID-19  
+All stats returned are as up to date as the CSV in the repository is, on each request it returns the freshly updated response
 ## Goal
 The goal of this API is to provide quick and useful, up to date statistics on Covid-19 deaths, confirmed cases, and recovered cases by location.  
 
