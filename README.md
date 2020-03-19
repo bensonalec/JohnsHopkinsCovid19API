@@ -14,6 +14,38 @@ Not sure, potentially add more endpoints, at this time I'm not sure.
 
 ## Endpoints
 
+### /api/Daily
+Retrieve all of the nodes for the day
+**EXAMPLE**
+/api/Daily
+```
+{
+    "Nodes": [
+        {
+            "Province/State": "Hubei",
+            "Country/Region": "China",
+            "Last_Update": "2020-03-18T12:13:09",
+            "Confirmed": 67800,
+            "Deaths": 3122,
+            "Recovered": 56927,
+            "Latitude": 30.9756,
+            "Longitude": 112.2707
+        },
+		...
+        {
+            "Province/State": "",
+            "Country/Region": "The Gambia",
+            "Last_Update": "2020-03-18T14:13:56",
+            "Confirmed": 0,
+            "Deaths": 0,
+            "Recovered": 0,
+            "Latitude": 13.4667,
+            "Longitude": -16.6000
+        }
+    ]
+}
+```
+
 ### /api/Daily/State/{state}
 Based on the state/province that is passed in, will return and reported nodes from that state/province  
 **EXAMPLE**  
