@@ -321,3 +321,85 @@ func getTSData(in string) string{
 	return finalFinal
 	
 }
+
+func getTSDataState(in string, state string) string{
+	r := csv.NewReader(strings.NewReader(in))
+	finalFinal := "{\n\"Nodes\":["
+	var found []string
+	var first []string
+	i := 0
+	for {
+		line, err := r.Read()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Fatal(err)
+		}
+		if(i == 0) {
+			first = line
+			first = first[4:]
+		} else {
+			if(strings.ToLower(line[0]) == strings.ToLower(state)) {
+				finalReturn := "{" + "\n\"Province/State\":\"" + line[0] + "\",\n\"Country/Region\":\""+line[1]+"\",\n\"Latitude\":"+line[6]+",\n\"Longitude\":"+line[7]+",\n\"Days\":["
+				for ind,ele := range first {
+					finalReturn += "{\"" + ele + "\":" + line[ind+4]+"},\n"
+				}
+				finalReturn = finalReturn[:len(finalReturn)-2]
+				finalReturn += "]\n},"
+				finalFinal += finalReturn
+				found = append(found,finalReturn)
+	
+			}
+
+		}
+		i++
+	}
+	if(len(found) > 0) {
+		finalFinal = finalFinal[:len(finalFinal)-1]
+	}
+	finalFinal += "]\n}"
+	return finalFinal
+	
+}
+
+func getTSDataCountry(in string, country string) string{
+	r := csv.NewReader(strings.NewReader(in))
+	finalFinal := "{\n\"Nodes\":["
+	var found []string
+	var first []string
+	i := 0
+	for {
+		line, err := r.Read()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Fatal(err)
+		}
+		if(i == 0) {
+			first = line
+			first = first[4:]
+		} else {
+			if(strings.ToLower(line[1]) == strings.ToLower(country)) {
+				finalReturn := "{" + "\n\"Province/State\":\"" + line[0] + "\",\n\"Country/Region\":\""+line[1]+"\",\n\"Latitude\":"+line[6]+",\n\"Longitude\":"+line[7]+",\n\"Days\":["
+				for ind,ele := range first {
+					finalReturn += "{\"" + ele + "\":" + line[ind+4]+"},\n"
+				}
+				finalReturn = finalReturn[:len(finalReturn)-2]
+				finalReturn += "]\n},"
+				finalFinal += finalReturn
+				found = append(found,finalReturn)
+	
+			}
+
+		}
+		i++
+	}
+	if(len(found) > 0) {
+		finalFinal = finalFinal[:len(finalFinal)-1]
+	}
+	finalFinal += "]\n}"
+	return finalFinal
+	
+}
