@@ -5,7 +5,20 @@ import (
 	"net/http"
 	"io/ioutil"
 	"strings"
+	"github.com/gocolly/colly"
 )
+
+func getNextPage() string{
+	c := colly.NewCollector()
+	var links []string
+	c.OnHTML(".js-navigation-open", func(e *colly.HTMLElement) {
+		// fmt.Println(e.Attr("href"))
+		links = append(links,e.Attr("href"))
+	})
+	c.Visit("https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports")
+	//get last, then
+	return links[len(links)-2]
+}
 
 func getCountry(country string) string{
 	
