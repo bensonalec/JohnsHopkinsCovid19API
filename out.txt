@@ -1,0 +1,12 @@
+{
+"Nodes":[{
+"Province/State":"Washington",
+"Country/Region":"US",
+"Last_Update":"2020-03-16T23:53:03",
+"Confirmed":904,
+"Deaths":48,
+"Recovered":1,
+"Latitude":47.4009,
+"Longitude":-121.4905
+}]
+}
