@@ -14,10 +14,10 @@ Not sure, potentially add more endpoints, at this time I'm not sure.
 
 ## Endpoints
 
-### /api/State/{state}
+### /api/Daily/State/{state}
 Based on the state/province that is passed in, will return and reported nodes from that state/province  
 **EXAMPLE**  
-/api/State/Washington  
+/api/Daily/State/Washington  
 ```
 {
     "Nodes": [
@@ -34,10 +34,10 @@ Based on the state/province that is passed in, will return and reported nodes fr
     ]
 }
 ```
-### /api/Country/{country}
+### /api/Daily/Country/{country}
 Based on the country passed in, will return all reported nodes from that country  
 **EXAMPLE**  
-/api/Country/US  
+/api/Daily/Country/US  
 ```
 {
     "Nodes": [
@@ -66,10 +66,10 @@ Based on the country passed in, will return all reported nodes from that country
 }
 ```  
 
-### /api/CountryAndState/{state}/{country}
+### /api/Daily/CountryAndState/{state}/{country}
 
 **EXAMPLE**  
-/api/CountryAndState/Washington/US  
+/api/Daily/CountryAndState/Washington/US  
 ```
 {
     "Nodes": [
