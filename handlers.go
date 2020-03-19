@@ -1,0 +1,114 @@
+package main
+
+
+import (
+    "net/http"
+	"github.com/gorilla/mux"
+)
+
+func notFound(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(http.StatusNotFound)
+    w.Write([]byte(`{"status code": "400"}`))
+}
+
+func stateGET(w http.ResponseWriter, r *http.Request) {
+	pathParams := mux.Vars(r)
+	w.Header().Set("Content-Type", "application/json")
+	var state string
+	var toWrite string
+
+	if val,ok := pathParams["state"]; ok {
+		state = val
+
+		toWrite = getState(state)
+		w.WriteHeader(200)
+		w.Write([]byte((toWrite)))
+
+	}
+
+
+}
+
+func countryGET(w http.ResponseWriter, r *http.Request) {
+	pathParams := mux.Vars(r)
+	w.Header().Set("Content-Type", "application/json")
+	var country string
+	var toWrite string
+
+	if val,ok := pathParams["country"]; ok {
+		country = val
+		toWrite = getCountry(country)
+		w.WriteHeader(200)
+		w.Write([]byte((toWrite)))	
+	}
+
+
+}
+
+func countrystateGET(w http.ResponseWriter, r *http.Request) {
+	pathParams := mux.Vars(r)
+	w.Header().Set("Content-Type", "application/json")
+	var country string
+	var state string
+	var toWrite string
+
+	if val,ok := pathParams["state"]; ok {
+		state = val
+		if val,ok := pathParams["country"]; ok {
+			country = val
+			toWrite = getCountryState(state,country)
+			w.WriteHeader(200)
+			w.Write([]byte((toWrite)))	
+	
+		}
+	}
+
+
+}
+
+func dailyallGET(w http.ResponseWriter, r *http.Request) {
+	
+	w.Header().Set("Content-Type", "application/json")
+	var toWrite string
+
+	toWrite = getAll()
+	w.WriteHeader(200)
+	w.Write([]byte((toWrite)))	
+	
+
+
+}
+
+func TSallConfirmedGET(w http.ResponseWriter, r *http.Request) {
+	
+	w.Header().Set("Content-Type", "application/json")
+	var toWrite string
+
+	toWrite = getTSConfirmedAll()
+	w.WriteHeader(200)
+	w.Write([]byte((toWrite)))	
+	
+}
+
+func TSallRecoveredGET(w http.ResponseWriter, r *http.Request) {
+	
+	w.Header().Set("Content-Type", "application/json")
+	var toWrite string
+
+	toWrite = getTSRecoveredAll()
+	w.WriteHeader(200)
+	w.Write([]byte((toWrite)))	
+	
+}
+
+func TSallDeathsGET(w http.ResponseWriter, r *http.Request) {
+	
+	w.Header().Set("Content-Type", "application/json")
+	var toWrite string
+
+	toWrite = getTSDeathsAll()
+	w.WriteHeader(200)
+	w.Write([]byte((toWrite)))	
+	
+}
