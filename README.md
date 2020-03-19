@@ -16,8 +16,8 @@ The goal of this API is to provide quick and useful, up to date statistics on Co
 ## Endpoints
 
 ### /api/Daily
-Retrieve all of the nodes for the day
-**EXAMPLE**
+Retrieve all of the nodes for the day  
+**EXAMPLE**  
 /api/Daily
 ```
 {
