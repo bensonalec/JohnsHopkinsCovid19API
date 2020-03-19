@@ -5,4 +5,79 @@ Using the data from the Repository located at: https://github.com/CSSEGISandData
 The goal of this API is to provide quick and useful, up to date statistics on Covid-19 deaths, confirmed cases, and recovered cases by location.  
 
 ## TODO
-Right now, the backend is set up ,I need to build an actual API around this data to serve it.
+Not sure, potentially add more endpoints, at this time I'm not sure.
+
+## Endpoints
+
+### /api/State/{state}
+Based on the state/province that is passed in, will return and reported nodes from that state/province  
+**EXAMPLE**  
+/api/State/Washington  
+```
+{
+    "Nodes": [
+        {
+            "Province/State": "Washington",
+            "Country/Region": "US",
+            "Last_Update": "2020-03-16T23:53:03",
+            "Confirmed": 904,
+            "Deaths": 48,
+            "Recovered": 1,
+            "Latitude": 47.4009,
+            "Longitude": -121.4905
+        }
+    ]
+}
+```
+### /api/Country/{country}
+Based on the country passed in, will return all reported nodes from that country
+**EXAMPLE**  
+/api/Country/US  
+```
+{
+    "Nodes": [
+        {
+            "Province/State": "New York",
+            "Country/Region": "US",
+            "Last_Update": "2020-03-16T21:53:03",
+            "Confirmed": 967,
+            "Deaths": 10,
+            "Recovered": 0,
+            "Latitude": 42.1657,
+            "Longitude": -74.9481
+        },
+        ...
+        {
+            "Province/State": "West Virginia",
+            "Country/Region": "US",
+            "Last_Update": "2020-03-10T02:33:04",
+            "Confirmed": 0,
+            "Deaths": 0,
+            "Recovered": 0,
+            "Latitude": 38.4912,
+            "Longitude": -80.9545
+        }
+    ]
+}
+```  
+
+### /api/CountryAndState/{state}/{country}
+
+**EXAMPLE**  
+/api/CountryAndState/Washington/US  
+```
+{
+    "Nodes": [
+        {
+            "Province/State": "Washington",
+            "Country/Region": "US",
+            "Last_Update": "2020-03-16T23:53:03",
+            "Confirmed": 904,
+            "Deaths": 48,
+            "Recovered": 1,
+            "Latitude": 47.4009,
+            "Longitude": -121.4905
+        }
+    ]
+}
+```
