@@ -30,7 +30,7 @@ Based on the state/province that is passed in, will return and reported nodes fr
 }
 ```
 ### /api/Country/{country}
-Based on the country passed in, will return all reported nodes from that country
+Based on the country passed in, will return all reported nodes from that country  
 **EXAMPLE**  
 /api/Country/US  
 ```
