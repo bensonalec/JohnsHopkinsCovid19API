@@ -174,7 +174,7 @@ func getAll() string{
 	finalFinal := "{\n\"Nodes\":["
 	if(len(spl) > 0) {
 		var foundList []string
-		for _,ele := range spl {
+		for _,ele := range spl[1:] {
 			line := strings.Split(ele,",")
 			if(len(line) == 8) {
 

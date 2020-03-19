@@ -70,6 +70,19 @@ func countrystateGET(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func dailyallGET(w http.ResponseWriter, r *http.Request) {
+	
+	w.Header().Set("Content-Type", "application/json")
+	var toWrite string
+
+	toWrite = getAll()
+	w.WriteHeader(200)
+	w.Write([]byte((toWrite)))	
+	
+
+
+}
+
 
 func main() {
 	r := mux.NewRouter()
@@ -78,6 +91,7 @@ func main() {
 	api.HandleFunc("/Daily/State/{state}",stateGET).Methods(http.MethodGet)
 	api.HandleFunc("/Daily/Country/{country}",countryGET).Methods(http.MethodGet)
 	api.HandleFunc("/Daily/CountryAndState/{state}/{country}",countrystateGET).Methods(http.MethodGet)
+	api.HandleFunc("/Daily",dailyallGET).Methods(http.MethodGet)
 	// api.HandleFunc("/Timeseries/Confirmed",stateGET).Methods(http.MethodGet)
 	// api.HandleFunc("/Timeseries/Recovered",stateGET).Methods(http.MethodGet)
 	// api.HandleFunc("/Timeseries/Deaths",stateGET).Methods(http.MethodGet)
