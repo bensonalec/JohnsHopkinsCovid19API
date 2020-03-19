@@ -7,7 +7,7 @@ Right now only gets daily data
 The goal of this API is to provide quick and useful, up to date statistics on Covid-19 deaths, confirmed cases, and recovered cases by location.  
 
 ## TODO  
-1. Properly parse each line, right now does naive parsing using ,. Since it's a csv, this is not gonna work for things like Korea, South  
+1. Properly parse each line, right now does naive parsing using ,. Since it's a csv, this is not gonna work for things like Korea, South  (This is implemented in time series backend)
 2. Add endpoints for different days data  
 3. Add endpoints for the Time Series All data  
 4. Write backend for Time Series by State  
