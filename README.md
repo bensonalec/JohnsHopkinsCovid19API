@@ -10,7 +10,10 @@ The goal of this API is to provide quick and useful, up to date statistics on Co
 Not sure, potentially add more endpoints, at this time I'm not sure.  
 1. Properly parse each line, right now does naive parsing using ,. Since it's a csv, this is not gonna work for things like Korea, South  
 2. Add endpoints for different days data  
-3. Add endpoints for the Time Series
+3. Add endpoints for the Time Series All data  
+4. Write backend for Time Series by State  
+5. Write backend for Time Series by Country  
+6. Add endpoints for Time Series State and Country
 
 ## Endpoints
 
