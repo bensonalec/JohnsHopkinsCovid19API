@@ -11,6 +11,12 @@ To deploy this application, simply install golang, then type ``` go get github.c
 ## TODO  
 1. Add endpoints for different days data  
 
+## Address
+The ip for this is 35.247.123.60, with a port of 80
+
+## Aknowledgments
+Special thanks to https://twitter.com/bpmw_ for helping with hosting, and Johns Hopkins for the data.
+
 ## Endpoints
 
 ### /api/Daily
