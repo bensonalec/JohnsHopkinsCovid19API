@@ -22,7 +22,7 @@ Special thanks to [Ben](https://twitter.com/bpmw_) for helping with hosting, and
 ### /api/Daily
 Retrieve all of the nodes for the day  
 **EXAMPLE**  
-http://35.247.123.60/api/Daily
+http://35.247.123.60:80/api/Daily
 ```
 {
     "Nodes": [
