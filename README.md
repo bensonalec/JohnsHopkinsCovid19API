@@ -6,7 +6,7 @@ All stats returned are as up to date as the CSV in the repository is, on each re
 The goal of this API is to provide quick and useful, up to date statistics on Covid-19 deaths, confirmed cases, and recovered cases by location.  
 
 ## Deployment
-To deploy this application, simply install golang, then type "go build main.go backend.go backendDaily.go backendTimeSeries.go handlers.go" in the terminal after cloning this repo. Then, type "sudo ./main" and the API will be up and listening on port 80 for get requests. 
+To deploy this application, simply install golang, then type "go get github.com/gorilla/mux" and "go get github.com/gocolly/colly". Then build the application with "go build main.go backend.go backendDaily.go backendTimeSeries.go handlers.go" in the terminal after cloning this repo. Then, type "sudo ./main" and the API will be up and listening on port 80 for get requests. 
 
 ## TODO  
 1. Add endpoints for different days data  
