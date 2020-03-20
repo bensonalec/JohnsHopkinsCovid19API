@@ -116,6 +116,49 @@ Based on the country passed in, will return all reported nodes from that country
 }
 ```
 ### /api/Timeseries/Confirmed
+Get the timeseries for all locations of confirmed cases.  
+**EXAMPLE**
+/api/Timeseries/Confirmed  
+```
+{
+    "Nodes": [
+        {
+            "Province/State": "",
+            "Country/Region": "Thailand",
+            "Latitude": 5,
+            "Longitude": 7,
+            "Days": [
+                {
+                    "1/22/20": 2
+                },
+				...
+                {
+                    "3/18/20": 212
+                },
+                {
+                    "3/19/20": 272
+                }
+            ]
+        },
+		...
+       {
+            "Province/State": "",
+            "Country/Region": "The Gambia",
+            "Latitude": 0,
+            "Longitude": 0,
+            "Days": [
+                {
+                    "1/22/20": 0
+                },
+				...
+               {
+                    "3/19/20": 0
+                }
+            ]
+        }
+    ]
+}
+```
 ### /api/Timeseries/Deaths
 ### /api/Timeseries/Confirmed/State/{state}
 ### /api/Timeseries/Recovered/State/{state}
