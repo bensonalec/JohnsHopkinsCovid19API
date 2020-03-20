@@ -6,17 +6,23 @@ All stats returned are as up to date as the CSV in the repository is, on each re
 The goal of this API is to provide quick and useful, up to date statistics on Covid-19 deaths, confirmed cases, and recovered cases by location.  
 
 ## Deployment
-To deploy this application, simply install golang, then type "go get github.com/gorilla/mux" and "go get github.com/gocolly/colly". Then build the application with "go build main.go backend.go backendDaily.go backendTimeSeries.go handlers.go" in the terminal after cloning this repo. Then, type "sudo ./main" and the API will be up and listening on port 80 for get requests. 
+To deploy this application, simply install golang, then type ``` go get github.com/gorilla/mux ``` and ``` go get github.com/gocolly/colly ``` in the terminal. Then build the application with ``` go build main.go backend.go backendDaily.go backendTimeSeries.go handlers.go ``` in the terminal after cloning this repo. Then, type ``` sudo ./main ``` and the API will be up and listening on port 80 for get requests. 
 
 ## TODO  
 1. Add endpoints for different days data  
+
+## Address
+The ip for this is 35.247.123.60, with a port of 80
+
+## Aknowledgments
+Special thanks to [Ben](https://twitter.com/bpmw_) for helping with hosting, and Johns Hopkins for the data.
 
 ## Endpoints
 
 ### /api/Daily
 Retrieve all of the nodes for the day  
 **EXAMPLE**  
-/api/Daily
+http://35.247.123.60/api/Daily
 ```
 {
     "Nodes": [
@@ -48,7 +54,7 @@ Retrieve all of the nodes for the day
 ### /api/Daily/State/{state}
 Based on the state/province that is passed in, will return and reported nodes from that state/province  
 **EXAMPLE**  
-/api/Daily/State/Washington  
+http://35.247.123.60/api/Daily/State/Washington  
 ```
 {
     "Nodes": [
@@ -68,7 +74,7 @@ Based on the state/province that is passed in, will return and reported nodes fr
 ### /api/Daily/Country/{country}
 Based on the country passed in, will return all reported nodes from that country  
 **EXAMPLE**  
-/api/Daily/Country/US  
+http://35.247.123.60/api/Daily/Country/US  
 ```
 {
     "Nodes": [
@@ -100,7 +106,7 @@ Based on the country passed in, will return all reported nodes from that country
 ### /api/Daily/CountryAndState/{state}/{country}
 
 **EXAMPLE**  
-/api/Daily/CountryAndState/Washington/US  
+http://35.247.123.60/api/Daily/CountryAndState/Washington/US  
 ```
 {
     "Nodes": [
@@ -120,7 +126,7 @@ Based on the country passed in, will return all reported nodes from that country
 ### /api/Timeseries/Confirmed
 Get the timeseries for all locations of confirmed cases.  
 **EXAMPLE**  
-/api/Timeseries/Confirmed  
+http://35.247.123.60/api/Timeseries/Confirmed  
 ```
 {
     "Nodes": [
@@ -164,7 +170,7 @@ Get the timeseries for all locations of confirmed cases.
 ### /api/Timeseries/Deaths
 Get the timeseries for all locations of deaths.  
 **EXAMPLE**  
-/api/Timeseries/Deaths  
+http://35.247.123.60/api/Timeseries/Deaths  
 ```
 {
     "Nodes": [
@@ -205,7 +211,7 @@ Get the timeseries for all locations of deaths.
 ### /api/Timeseries/Recovered
 Get the timeseries for all locations of recovered cases.  
 **EXAMPLE**  
-/api/Timeseries/Recovered  
+http://35.247.123.60/api/Timeseries/Recovered  
 ```
 {
     "Nodes": [
