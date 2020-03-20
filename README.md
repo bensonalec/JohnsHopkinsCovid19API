@@ -22,7 +22,7 @@ Special thanks to [Ben](https://twitter.com/bpmw_) for helping with hosting, and
 ### /api/Daily
 Retrieve all of the nodes for the day  
 **EXAMPLE**  
-/api/Daily
+http://35.247.123.60/api/Daily
 ```
 {
     "Nodes": [
@@ -54,7 +54,7 @@ Retrieve all of the nodes for the day
 ### /api/Daily/State/{state}
 Based on the state/province that is passed in, will return and reported nodes from that state/province  
 **EXAMPLE**  
-/api/Daily/State/Washington  
+http://35.247.123.60/api/Daily/State/Washington  
 ```
 {
     "Nodes": [
@@ -74,7 +74,7 @@ Based on the state/province that is passed in, will return and reported nodes fr
 ### /api/Daily/Country/{country}
 Based on the country passed in, will return all reported nodes from that country  
 **EXAMPLE**  
-/api/Daily/Country/US  
+http://35.247.123.60/api/Daily/Country/US  
 ```
 {
     "Nodes": [
@@ -106,7 +106,7 @@ Based on the country passed in, will return all reported nodes from that country
 ### /api/Daily/CountryAndState/{state}/{country}
 
 **EXAMPLE**  
-/api/Daily/CountryAndState/Washington/US  
+http://35.247.123.60/api/Daily/CountryAndState/Washington/US  
 ```
 {
     "Nodes": [
@@ -126,7 +126,7 @@ Based on the country passed in, will return all reported nodes from that country
 ### /api/Timeseries/Confirmed
 Get the timeseries for all locations of confirmed cases.  
 **EXAMPLE**  
-/api/Timeseries/Confirmed  
+http://35.247.123.60/api/Timeseries/Confirmed  
 ```
 {
     "Nodes": [
@@ -170,7 +170,7 @@ Get the timeseries for all locations of confirmed cases.
 ### /api/Timeseries/Deaths
 Get the timeseries for all locations of deaths.  
 **EXAMPLE**  
-/api/Timeseries/Deaths  
+http://35.247.123.60/api/Timeseries/Deaths  
 ```
 {
     "Nodes": [
@@ -211,7 +211,7 @@ Get the timeseries for all locations of deaths.
 ### /api/Timeseries/Recovered
 Get the timeseries for all locations of recovered cases.  
 **EXAMPLE**  
-/api/Timeseries/Recovered  
+http://35.247.123.60/api/Timeseries/Recovered  
 ```
 {
     "Nodes": [
