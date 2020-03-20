@@ -14,7 +14,7 @@ func getCountry(country string) string{
 	if(len(spl) > 0) {
 		var foundList []string
 		for _,ele := range spl {
-			line := strings.Split(ele,",")
+			line := splitLine(ele)
 			if(len(line) > 1 && strings.ToLower(line[1]) == strings.ToLower(country)){
 				// fmt.Println(line)
 				//now build JSON response
@@ -58,7 +58,7 @@ func getState(city string) string{
 	if(len(spl) > 0) {
 		var foundList []string
 		for _,ele := range spl {
-			line := strings.Split(ele,",")
+			line := splitLine(ele)
 
 			if(len(line) > 1 && strings.ToLower(line[0]) == strings.ToLower(city)){
 				// fmt.Println(line)
@@ -103,7 +103,7 @@ func getCountryState(state string,country string) string{
 	if(len(spl) > 0) {
 		var foundList []string
 		for _,ele := range spl {
-			line := strings.Split(ele,",")
+			line := splitLine(ele)
 			if(len(line) > 1 && strings.ToLower(line[0]) == strings.ToLower(state) && strings.ToLower(line[1]) == strings.ToLower(country)){
 				// fmt.Println(line)
 				//now build JSON response
@@ -149,7 +149,7 @@ func getAll() string{
 	if(len(spl) > 0) {
 		var foundList []string
 		for _,ele := range spl[1:] {
-			line := strings.Split(ele,",")
+			line := splitLine(ele)
 			if(len(line) == 8) {
 
 				//now build JSON response

@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"io/ioutil"
 	"github.com/gocolly/colly"
+	"encoding/csv"
+	"strings"
 )
 
 func getNextPage() string{
@@ -45,3 +47,11 @@ func getPage() string {
 	return string(html)
 }
 
+func splitLine(in string) []string{
+	r := csv.NewReader(strings.NewReader(in))
+
+	records, _ := r.ReadAll()
+
+	return records[0]
+
+}
