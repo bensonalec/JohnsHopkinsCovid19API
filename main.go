@@ -14,9 +14,9 @@ func main() {
 	api.HandleFunc("/Daily/State/{state}",stateGET).Methods(http.MethodGet)
 	api.HandleFunc("/Daily/Country/{country}",countryGET).Methods(http.MethodGet)
 	api.HandleFunc("/Daily/CountryAndState/{state}/{country}",countrystateGET).Methods(http.MethodGet)
-	api.HandleFunc("/Daily",dailyallGET).Methods(http.MethodGet)
 
 	api.HandleFunc("/Timeseries/Confirmed",TSallConfirmedGET).Methods(http.MethodGet)
+	api.HandleFunc("/Timeseries/Recovered",TSallRecoveredGET).Methods(http.MethodGet)
 	api.HandleFunc("/Timeseries/Deaths",TSallDeathsGET).Methods(http.MethodGet)
 
 	api.HandleFunc("/Timeseries/Confirmed/State/{state}",TSConfirmedstateGET).Methods(http.MethodGet)

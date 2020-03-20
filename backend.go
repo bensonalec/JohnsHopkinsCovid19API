@@ -51,7 +51,12 @@ func splitLine(in string) []string{
 	r := csv.NewReader(strings.NewReader(in))
 
 	records, _ := r.ReadAll()
+	
+	if(len(records) > 0) {
+		return records[0]
+	} else {
+		return nil
+	}
 
-	return records[0]
 
 }
