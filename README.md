@@ -243,9 +243,14 @@ Get the timeseries for all locations of recovered cases.
 ```
 
 ### /api/Timeseries/Confirmed/State/{state}
-
+Get the timeseries of confirmed cases for all locations that have a matching state/province.
 ### /api/Timeseries/Recovered/State/{state}
+Get the timeseries of recovered cases for all locations that have a matching state/province.
 ### /api/Timeseries/Deaths/State/{state}
+Get the timeseries of confirmed cases for all locations that have a matching state/province.
 ### /api/Timeseries/Confirmed/Country/{country}
+Get the timeseries of confirmed cases for all locations that have a matching country.
 ### /api/Timeseries/Recovered/Country/{country}
+Get the timeseries of recovered cases for all locations that have a matching country.
 ### /api/Timeseries/Deaths/Country/{country}
+Get the timeseries of deaths cases for all locations that have a matching country.
