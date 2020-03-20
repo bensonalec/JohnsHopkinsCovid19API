@@ -7,7 +7,6 @@ The goal of this API is to provide quick and useful, up to date statistics on Co
 
 ## TODO  
 1. Add endpoints for different days data  
-2. Add documentation for Time Series Endpoints
 
 ## Endpoints
 
