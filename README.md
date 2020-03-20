@@ -115,11 +115,11 @@ Based on the country passed in, will return all reported nodes from that country
     ]
 }
 ```
-### /API/Timeseries/Confirmed
-### /API/Timeseries/Deaths
-### /API/Timeseries/Confirmed/State/{state}
-### /API/Timeseries/Recovered/State/{state}
-### /API/Timeseries/Deaths/State/{state}
-### /API/Timeseries/Confirmed/Country/{country}
-### /API/Timeseries/Recovered/Country/{country}
-### /API/Timeseries/Deaths/Country/{country}
+### /api/Timeseries/Confirmed
+### /api/Timeseries/Deaths
+### /api/Timeseries/Confirmed/State/{state}
+### /api/Timeseries/Recovered/State/{state}
+### /api/Timeseries/Deaths/State/{state}
+### /api/Timeseries/Confirmed/Country/{country}
+### /api/Timeseries/Recovered/Country/{country}
+### /api/Timeseries/Deaths/Country/{country}
