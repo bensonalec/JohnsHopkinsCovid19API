@@ -117,7 +117,7 @@ Based on the country passed in, will return all reported nodes from that country
 ```
 ### /api/Timeseries/Confirmed
 Get the timeseries for all locations of confirmed cases.  
-**EXAMPLE**
+**EXAMPLE**  
 /api/Timeseries/Confirmed  
 ```
 {
@@ -160,7 +160,90 @@ Get the timeseries for all locations of confirmed cases.
 }
 ```
 ### /api/Timeseries/Deaths
+Get the timeseries for all locations of deaths.  
+**EXAMPLE**  
+/api/Timeseries/Deaths  
+```
+{
+    "Nodes": [
+        {
+            "Province/State": "",
+            "Country/Region": "Thailand",
+            "Latitude": 0,
+            "Longitude": 0,
+            "Days": [
+                {
+                    "1/22/20": 0
+                },
+				...
+                {
+                    "3/19/20": 1
+                }
+            ]
+        },
+		...
+        {
+            "Province/State": "",
+            "Country/Region": "The Gambia",
+            "Latitude": 0,
+            "Longitude": 0,
+            "Days": [
+                {
+                    "1/22/20": 0
+                },
+				...
+                {
+                    "3/19/20": 0
+                }
+            ]
+        }
+    ]
+}
+```
+### /api/Timeseries/Recovered
+Get the timeseries for all locations of recovered cases.  
+**EXAMPLE**  
+/api/Timeseries/Recovered  
+```
+{
+    "Nodes": [
+        {
+            "Province/State": "",
+            "Country/Region": "Thailand",
+            "Latitude": 0,
+            "Longitude": 0,
+            "Days": [
+                {
+                    "1/22/20": 0
+                },
+				...
+                {
+                    "3/19/20": 1
+                }
+            ]
+        },
+		...
+        {
+            "Province/State": "",
+            "Country/Region": "The Gambia",
+            "Latitude": 0,
+            "Longitude": 0,
+            "Days": [
+                {
+                    "1/22/20": 0
+                },
+				...
+                {
+                    "3/19/20": 0
+                }
+            ]
+        }
+    ]
+}
+```
+
 ### /api/Timeseries/Confirmed/State/{state}
+
 ### /api/Timeseries/Recovered/State/{state}
 ### /api/Timeseries/Deaths/State/{state}
 ### /api/Timeseries/Confirmed/Country/{country}
