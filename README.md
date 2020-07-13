@@ -1,5 +1,8 @@
 # Johns Hopkins Covid 19 API
 
+## NOTE
+This tool is no longer functional, unfortunately the format of stored data has changed and this no longer works. I'm not sure if I'll have time to update it to the new form.
+
 Using the data from the Repository located at: https://github.com/CSSEGISandData/COVID-19  
 All stats returned are as up to date as the CSV in the repository is, on each request it returns the freshly updated response 
 ## Goal
